@@ -331,8 +331,8 @@ importers:
         specifier: ^0.8.8
         version: 0.8.8(@anthropic-ai/sdk@0.74.0(zod@3.25.76))(openai@6.25.0(ws@8.19.0(bufferutil@4.1.0))(zod@3.25.76))(react@19.0.0)
       mariadb:
-        specifier: ^3.4.0
-        version: 3.4.5
+        specifier: ^3.5.1
+        version: 3.5.1(@types/geojson@7946.0.16)(@types/node@25.3.3)
       mem0ai:
         specifier: ^2.1.8
         version: 2.2.2(@anthropic-ai/sdk@0.74.0(zod@3.25.76))(@azure/identity@4.13.0)(@azure/search-documents@12.2.0)(@cloudflare/workers-types@4.20260207.0)(@google/genai@1.40.0(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@3.25.76))(bufferutil@4.1.0))(@langchain/core@libs+langchain-core)(@mistralai/mistralai@1.14.1(bufferutil@4.1.0))(@qdrant/js-client-rest@1.16.2(typescript@5.8.3))(@supabase/supabase-js@2.95.3(bufferutil@4.1.0))(@types/jest@30.0.0)(@types/pg@8.16.0)(@types/sqlite3@3.1.11)(cloudflare@4.5.0(encoding@0.1.13))(encoding@0.1.13)(groq-sdk@0.37.0(encoding@0.1.13))(neo4j-driver@6.0.1)(ollama@0.6.3)(pg@8.18.0)(redis@4.7.1)(sqlite3@5.1.7)(ws@8.19.0(bufferutil@4.1.0))
@@ -1050,8 +1050,8 @@ importers:
         specifier: ^0.8.8
         version: 0.8.8(@anthropic-ai/sdk@0.74.0(zod@4.3.6))(openai@6.25.0(ws@8.19.0(bufferutil@4.1.0))(zod@4.3.6))(react@19.0.0)
       mariadb:
-        specifier: ^3.4.0
-        version: 3.4.5
+        specifier: ^3.5.1
+        version: 3.5.1(@types/geojson@7946.0.16)(@types/node@25.3.3)
       mem0ai:
         specifier: ^2.1.8
         version: 2.2.2(@anthropic-ai/sdk@0.74.0(zod@4.3.6))(@azure/identity@4.13.0)(@azure/search-documents@12.2.0)(@cloudflare/workers-types@4.20260207.0)(@google/genai@1.40.0(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6))(bufferutil@4.1.0))(@langchain/core@libs+langchain-core)(@mistralai/mistralai@1.14.1(bufferutil@4.1.0))(@qdrant/js-client-rest@1.16.2(typescript@5.8.3))(@supabase/supabase-js@2.95.3(bufferutil@4.1.0))(@types/jest@30.0.0)(@types/pg@8.16.0)(@types/sqlite3@3.1.11)(cloudflare@4.5.0(encoding@0.1.13))(encoding@0.1.13)(groq-sdk@0.37.0(encoding@0.1.13))(neo4j-driver@6.0.1)(ollama@0.6.3)(pg@8.18.0)(redis@4.7.1)(sqlite3@5.1.7)(ws@8.19.0(bufferutil@4.1.0))
@@ -1538,8 +1538,8 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
       mariadb:
-        specifier: ^3.4.0
-        version: 3.4.5
+        specifier: ^3.5.1
+        version: 3.5.1(@types/geojson@7946.0.16)(@types/node@25.3.0)
       mem0ai:
         specifier: ^2.1.8
         version: 2.2.2(@anthropic-ai/sdk@0.74.0(zod@4.3.6))(@azure/identity@4.13.0)(@azure/search-documents@12.2.0)(@cloudflare/workers-types@4.20260207.0)(@google/genai@1.40.0(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6))(bufferutil@4.1.0))(@langchain/core@libs+langchain-core)(@mistralai/mistralai@1.14.1(bufferutil@4.1.0))(@qdrant/js-client-rest@1.16.2(typescript@5.8.3))(@supabase/supabase-js@2.95.3(bufferutil@4.1.0))(@types/jest@30.0.0)(@types/pg@8.16.0)(@types/sqlite3@3.1.11)(cloudflare@4.5.0(encoding@0.1.13))(encoding@0.1.13)(groq-sdk@0.37.0(encoding@0.1.13))(neo4j-driver@6.0.1)(ollama@0.6.3)(pg@8.18.0)(redis@4.7.1)(sqlite3@5.1.7)(ws@8.19.0(bufferutil@4.1.0))
@@ -13386,9 +13386,17 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  mariadb@3.4.5:
-    resolution: {integrity: sha512-gThTYkhIS5rRqkVr+Y0cIdzr+GRqJ9sA2Q34e0yzmyhMCwyApf3OKAC1jnF23aSlIOqJuyaUFUcj7O1qZslmmQ==}
-    engines: {node: '>= 14'}
+  mariadb@3.5.1:
+    resolution: {integrity: sha512-ObKf/e7jU8pmwa5wTs1UwhLMrQYRBDwXPndej2Dv/rvbqsokJYlymubsNtpakVfjI+hd0bG3U6tiuVunDYoLtA==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@types/geojson': '>=7946.0.0'
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/geojson':
+        optional: true
+      '@types/node':
+        optional: true
 
   markdown-table@2.0.0:
     resolution: {integrity: sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==}
@@ -16883,7 +16891,7 @@ snapshots:
       '@csstools/css-color-parser': 4.0.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-tokenizer': 4.0.0
-      lru-cache: 11.2.5
+      lru-cache: 11.2.6
 
   '@asamuzakjp/dom-selector@6.8.1':
     dependencies:
@@ -24453,7 +24461,8 @@ snapshots:
 
   '@types/flat@5.0.5': {}
 
-  '@types/geojson@7946.0.16': {}
+  '@types/geojson@7946.0.16':
+    optional: true
 
   '@types/google-protobuf@3.15.10': {}
 
@@ -26774,7 +26783,7 @@ snapshots:
       '@asamuzakjp/css-color': 4.1.2
       '@csstools/css-syntax-patches-for-csstree': 1.0.27
       css-tree: 3.1.0
-      lru-cache: 11.2.5
+      lru-cache: 11.2.6
 
   d3-dsv@3.0.1:
     dependencies:
@@ -30055,13 +30064,23 @@ snapshots:
       underscore: 1.13.7
       xmlbuilder: 10.1.1
 
-  mariadb@3.4.5:
+  mariadb@3.5.1(@types/geojson@7946.0.16)(@types/node@25.3.0):
     dependencies:
-      '@types/geojson': 7946.0.16
-      '@types/node': 24.10.12
       denque: 2.1.0
-      iconv-lite: 0.6.3
+      iconv-lite: 0.7.2
       lru-cache: 10.4.3
+    optionalDependencies:
+      '@types/geojson': 7946.0.16
+      '@types/node': 25.3.0
+
+  mariadb@3.5.1(@types/geojson@7946.0.16)(@types/node@25.3.3):
+    dependencies:
+      denque: 2.1.0
+      iconv-lite: 0.7.2
+      lru-cache: 10.4.3
+    optionalDependencies:
+      '@types/geojson': 7946.0.16
+      '@types/node': 25.3.3
 
   markdown-table@2.0.0:
     dependencies:
