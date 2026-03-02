@@ -588,11 +588,19 @@ export class AgentNode<
 
             /**
              * Normalize Commands so middleware always sees AIMessage from handler().
-             * When an inner middleware returns a Command, substitute the tracked
-             * lastAiMessage. The raw Command is still captured in innerHandlerResult
-             * for the framework's Command collection.
+             * When an inner handler returns a Command (e.g. a structured-output
+             * retry from handleToolStrategyError), preserve it in collectedCommands
+             * so the framework can still act on it, then substitute the tracked
+             * lastAiMessage for the middleware layer above.
+             *
+             * The includes() guard prevents double-collection when multiple
+             * middleware are stacked: an inner middleware's outer wrapper
+             * (line ~627) may have already collected the same Command object.
              */
             if (isCommand(innerHandlerResult) && lastAiMessage) {
+              if (!collectedCommands.includes(innerHandlerResult)) {
+                collectedCommands.push(innerHandlerResult);
+              }
               return lastAiMessage as InternalModelResponse<StructuredResponseFormat>;
             }
 
